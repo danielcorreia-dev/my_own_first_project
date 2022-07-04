@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
 :root {
-
+    --mid-purple:#b52d90;
+    --dark-purple:#802066;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 img {
@@ -31,9 +33,24 @@ html {
 
 .start-bg {
     position: relative;
-    background-image: url();
+    background-image: url(./assets/background-cover.jpg);
     background-size: cover;
+    background-position: center top;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 1;
+}
+
+.start-bg::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .7;
+    z-index: -1;
 }
 
 /*  Header */
@@ -48,11 +65,17 @@ html {
 }
 
 #navbar h1 {
+    position: relative;
     cursor: pointer;
+    transition: all ease .2s;
 }
 
 #navbar h1 span {
-    color: red;
+    color: var(--mid-purple);
+}
+
+#navbar .navbar h1:hover {
+    color: var(--dark-purple);
 }
 
 #navbar .navbar {
@@ -82,19 +105,37 @@ html {
 }
 
 #navbar .nav-items li a:hover {
-    color: red;
-    border-bottom: solid red 2px;
+    color: var(--mid-purple);
+    border-bottom: solid var(--mid-purple) 2px;
 }
-
- /* End Header */
 
 /* Main Container */
 
 #header h1 {
+    display: block;
     font-size: 48px;
     font-weight: bold;
     line-height: 1em;
     position: relative;
+}
+
+#header #dot{
+    position: absolute;
+    top: -56px;
+    left: 430px;
+    height: 100%;
+    width: 0%;
+    background-color: var(--mid-purple);
+    height: 10px;
+    width: 10px;
+    animation: blink_point 1s ease infinite; 
+    animation-delay: .5;
+}
+
+@keyframes blink_point {
+    100%{
+        opacity: 0%;
+    }
 }
 
 #heaader a {
@@ -118,7 +159,7 @@ html {
     flex-wrap: wrap;
     justify-content: space-between;
     width: 1200px;
-    height: 80vh;
+    height: 87vh;
 }
 
 #header .headline {
@@ -135,12 +176,18 @@ html {
     flex-wrap: wrap;
     margin-left: 120px;
     transition: 1s ease all;
+    transform: rotate(5deg);
+    cursor: auto;
+}
+
+#header .photo img:hover {
+    transform: rotate(10deg);
 }
 
 #header .cta {
     font-size: 2rem;
-    color: crimson;
-    border: solid 2px crimson;
+    color: var(--mid-purple);
+    border: solid 2px var(--mid-purple);
     padding: 8px 16px;
     text-decoration: none;
     text-transform: uppercase;
@@ -149,8 +196,32 @@ html {
 }
 
 #header .cta:hover {
-    background-color: crimson;
-    color: white
+    background-color: var(--mid-purple);
+    color: white;
 }
 
 /* End Main Container */
+
+#about-us .about {
+    display: flex;
+    width: 1200px;
+    justify-content: space-between;
+    margin: 0 auto;
+    height: 40vh;
+}
+
+#about-us .services-items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+#about-us .tech-service {
+    border: var(--mid-purple) solid 2px;
+    text-align: center;
+    border-radius: 20px;
+    padding: 16px;
+    justify-self: center;
+    margin: 0px 28px;
+    font-size: 1em;
+}
