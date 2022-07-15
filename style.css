@@ -347,6 +347,11 @@ html {
 #contact {
     height: 75vh;
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 #contact::before {
@@ -365,4 +370,136 @@ html {
 #contact h1 {
     font-size: 4rem;
     font-weight: normal;
+}
+
+
+
+.formbox {
+    width: 960px;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.image-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+    border-right: #802066 solid 2px;
+}
+
+.image-form img {
+    display: block;
+    width: 70%;
+    flex: 1;
+}
+
+.contact-form {
+    flex: 1 1 20%;
+}
+
+form {
+    overflow: hidden;
+    z-index: 10;
+    padding: 2.3rem 2.2rem;
+    position: relative;
+}
+
+.title {
+    color: #202020;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-bottom: 0.7rem;
+}
+
+.input-container {
+    position: relative;
+    margin: 1rem 0;
+}
+
+.input {
+    width: 100%;
+    outline: none;
+    border: solid 2px #202020;
+    background: none;
+    padding: 0.6rem 1.2rem;
+    color: #101010;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+textarea.input {
+    padding: 0.8rem 1.2rem;
+    min-height: 150px;
+    border-radius: 22px;
+    resize: none;
+    overflow-y: auto;
+    font-family: inherit;
+}
+
+.input-container label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    padding: 0 0.4rem;
+    color: #202020;
+    font-size: 0.9rem;
+    font-weight: 400;
+    pointer-events: none;
+    z-index: 1000;
+    transition: 0.5s;
+}
+
+.input-container.textarea label {
+    top:1rem;
+    transform: translateY(0);
+}
+
+.btn {
+    padding: 0.6rem 1.3rem;
+    background-color: #101010;
+    color: #b52d90;
+    border: 2px solid #202020;
+    font-size: 0.95rem;
+    font-family: inherit;
+    border-radius: 15px;
+    width: 30%;
+    cursor: pointer;
+    line-height: 1;
+    outline: none;
+    transition: 0.3s;
+    margin: 0;
+}
+
+.btn:hover {
+    background-color: transparent;
+}
+
+.wrapper {
+    width: 100%;
+    height: 30vh;
+    background-color: red;
+    padding: 2rem;
+}
+
+.infos {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+}
+
+.list-section {
 }
