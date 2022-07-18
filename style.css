@@ -486,20 +486,67 @@ textarea.input {
     background-color: transparent;
 }
 
-.wrapper {
-    width: 100%;
-    height: 30vh;
-    background-color: red;
-    padding: 2rem;
+.f-container {
+    max-width: 1170px;
+    margin: auto;
 }
 
-.infos {
-    background-color: white;
-    width: 100%;
-    height: 100%;
+.row {
     display: flex;
-    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.list-section {
+.footer {
+    padding: 32px 0;
+}
+
+.row-content {
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+.row-content ul {
+    list-style: none;
+}
+
+.row-content a {
+    text-decoration: none;
+    color:var(--mid-purple);
+    transition: .3s;
+}
+
+.row-content a:hover{
+    color: var(--dark-purple);
+}
+
+.row-content h2 {
+    margin-bottom: 30px;
+    position: relative;
+    font-weight: 500;
+    font-size: 1.3em;
+}
+
+.row-content h2::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: var(--dark-purple);
+    height: 2px;
+    box-sizing: border-box;
+    width: 60px;
+}
+
+.copy {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    padding: 16px;
+}
+
+.copy h3 {
+    font-size: 0.9em;
+    font-weight: 300;
+    color: #464646;
 }
